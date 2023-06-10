@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WJ9Hudgn2n0ZLpTOU8ZOBCgoG+y/8PzTSAfubqSbp7/LtitJSkn9yBzCHmpuXf/sFk4571x1oZKtXWoYZznSOw==",
+  "dgSpecHash": "mBOchKVngaQ0+uHYJocj03883DHpePaIPNjpiNDxXZ4n/d37GmRvxhNGD/JvrupaBAc2ApedwbxZbkBdPYk6MA==",
   "success": true,
-  "projectFilePath": "/home/marcelo/RiderProjects/Filmes/Filmes/Filmes.csproj",
+  "projectFilePath": "/home/marcelo/VSProjects/Filmes/Filmes/Filmes.csproj",
   "expectedPackageFiles": [
     "/home/marcelo/.nuget/packages/humanizer.core/2.2.0/humanizer.core.2.2.0.nupkg.sha512",
     "/home/marcelo/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",

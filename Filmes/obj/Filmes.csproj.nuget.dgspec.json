@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/marcelo/RiderProjects/Filmes/Filmes/Filmes.csproj": {}
+    "/home/marcelo/VSProjects/Filmes/Filmes/Filmes.csproj": {}
   },
   "projects": {
-    "/home/marcelo/RiderProjects/Filmes/Filmes/Filmes.csproj": {
+    "/home/marcelo/VSProjects/Filmes/Filmes/Filmes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marcelo/RiderProjects/Filmes/Filmes/Filmes.csproj",
+        "projectUniqueName": "/home/marcelo/VSProjects/Filmes/Filmes/Filmes.csproj",
         "projectName": "Filmes",
-        "projectPath": "/home/marcelo/RiderProjects/Filmes/Filmes/Filmes.csproj",
+        "projectPath": "/home/marcelo/VSProjects/Filmes/Filmes/Filmes.csproj",
         "packagesPath": "/home/marcelo/.nuget/packages/",
-        "outputPath": "/home/marcelo/RiderProjects/Filmes/Filmes/obj/",
+        "outputPath": "/home/marcelo/VSProjects/Filmes/Filmes/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/marcelo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -35,8 +35,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -61,7 +61,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.116/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
         }
       }
     }
