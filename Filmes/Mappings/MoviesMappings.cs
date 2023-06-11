@@ -26,14 +26,14 @@ public static class MoviesMappings
             genre: movieEntity.Genre
         );
     }
-    
-    public static MovieRequestDto MovieResponseToRequestDto(MovieResponseDto movieResponse)
+
+    public static MovieRequestDto MovieEntityToRequest(MovieEntity movieEntity)
     {
         return new MovieRequestDto(
-            name: movieResponse.Name,
-            length: movieResponse.Length,
-            director: movieResponse.Director,
-            genre: movieResponse.Genre
+            name: movieEntity.Name,
+            length: movieEntity.Length,
+            director: movieEntity.Director,
+            genre: movieEntity.Genre
         );
     }
 }

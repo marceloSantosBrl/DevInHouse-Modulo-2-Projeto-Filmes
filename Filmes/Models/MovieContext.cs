@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 public class MovieContext : DbContext
 {
 
-    public DbSet<MovieEntity> Movies { get; }
+    public DbSet<MovieEntity> Movies { get; set; }
     private readonly IConfiguration _configuration;
 
     public MovieContext(IConfiguration configuration)

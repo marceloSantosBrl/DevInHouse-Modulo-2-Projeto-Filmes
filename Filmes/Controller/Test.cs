@@ -1,4 +1,5 @@
 using Filmes.DTO;
+using Filmes.Mappings;
 using Filmes.Repository;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -8,37 +9,51 @@ using Microsoft.AspNetCore.Mvc;
 public class Test : ControllerBase
 {
 
+    private readonly IMoviesRepository _repository;
+
+    public Test(IMoviesRepository repository)
+    {
+        _repository = repository;
+    }
+
 
     [HttpGet("{id:int}")]
-    public ActionResult<MovieResponseDto> GetActionResult(int id)
+    public async Task<ActionResult<MovieResponseDto>> GetActionResult(int id)
     {
         try
         {
-            var movie = MoviesRepository.GetMovie(id);
+            var movie = await _repository.GetMovie(id);
             return Ok(movie);
         }
-        catch (ArgumentException)
+        catch
         {
             return NotFound("Filme com o id não encontrado");
         }
     }
 
     [HttpPut]
-    public IActionResult PutActionResult([FromBody] MovieRequestDto movie)
+    public async Task<ActionResult<int>> PutActionResult([FromBody] MovieRequestDto movie)
     {
-        MoviesRepository.AddMovie(movie);
-        return Created($"/test/{MoviesRepository.GetIndexFromRequest(movie)}", movie);
+        try
+        {
+            var id = await _repository.AddMovie(movie);
+            return Ok(id);
+        }
+        catch
+        {
+            return BadRequest("Falha ao adicionar filme ao banco de dados");
+        }
     }
 
     [HttpPatch("{id:int}")]
-    public IActionResult PatchActionResult(
+    public async Task<IActionResult> PatchActionResult(
         [FromBody] JsonPatchDocument<MovieRequestDto> patchDocument,
         int id)
     {
         try
         {
-            MoviesRepository.PatchMovie(patchDocument, id);
-            return NoContent();
+             await _repository.PatchMovie(patchDocument, id);
+             return NoContent();
         }
         catch
         {
@@ -47,11 +62,11 @@ public class Test : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public IActionResult DeleteActionResult(int id)
+    public async Task<IActionResult> DeleteActionResult(int id)
     {
         try
         {
-            MoviesRepository.DeleteMovie(id);
+            await _repository.DeleteMovie(id);
             return NoContent();
         }
         catch (ArgumentOutOfRangeException)
